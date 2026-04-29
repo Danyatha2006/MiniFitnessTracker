@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fitnesstracker">
+
+    <!-- Internet (optional) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- ✅ REQUIRED for step counter (Android 10+) -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <application
+        android:allowBackup="true"
+        android:label="FitnessTracker"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- 🔐 LOGIN (Launcher Activity) -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 📝 SIGNUP -->
+        <activity android:name=".SignupActivity" />
+
+        <!-- 🏠 DASHBOARD -->
+        <activity android:name=".DashboardActivity" />
+
+        <!-- 👤 PROFILE -->
+        <activity android:name=".ProfileActivity" />
+
+        <!-- ✏️ EDIT PROFILE (NEW) -->
+        <activity android:name=".EditProfileActivity" />
+
+        <!-- 🏃 TRACKER -->
+        <activity android:name=".TrackerActivity" />
+
+        <!-- 🔥 CALORIES -->
+        <activity android:name=".CaloriesActivity" />
+
+        <!-- 📊 HISTORY -->
+        <activity android:name=".HistoryActivity" />
+
+        <!-- ⚙️ SETTINGS -->
+        <activity android:name=".SettingsActivity" />
+
+    </application>
+
+</manifest>

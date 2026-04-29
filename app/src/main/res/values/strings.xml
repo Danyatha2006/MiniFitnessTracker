@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">FitnessTracker</string>
+
+    <!-- Toasts -->
+    <string name="enter_steps_first">Please enter steps first</string>
+    <string name="enter_all_values">Please enter all values</string>
+    <string name="invalid_numbers">Enter valid numbers</string>
+
+    <!-- Result -->
+    <string name="calories_result">Calories: %1$d kcal</string>
+
+</resources>

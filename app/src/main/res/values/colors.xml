@@ -1,0 +1,9 @@
+<resources>
+    <color name="purple_start">#6A00F4</color>
+    <color name="purple_end">#9D4EDD</color>
+    <color name="dark_bg">#0D0D1A</color>
+    <color name="card_bg">#1A1A2E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="hint">#AAAAAA</color>
+    <color name="stroke">#6A5AE0</color>
+</resources>

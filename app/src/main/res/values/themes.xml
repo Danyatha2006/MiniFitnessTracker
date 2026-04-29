@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.FitnessTracker" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- REMOVE this line (causing error) -->
+        <!-- <item name="android:windowBackground">@drawable/bg_gradient</item> -->
+
+        <item name="colorPrimary">@color/purple_end</item>
+        <item name="colorSecondary">@color/purple_start</item>
+
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+</resources>
