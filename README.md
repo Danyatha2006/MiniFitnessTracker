@@ -201,42 +201,52 @@ The reset feature is useful when users want to start tracking from the beginning
 # 📸 Application Screenshots
 
 ## 🔐 Login Screen
-![Login Screen](Images/login.jpg)
+
+<img src="Images/login.jpg" width="300">
 
 ## 🏠 Dashboard
-![Dashboard 1](Images/dashboard1.jpg)
 
-![Dashboard 2](Images/dashboard2.jpg)
+<img src="Images/dashboard1.jpg" width="300">
+
+<img src="Images/dashboard2.jpg" width="300">
 
 ## 🚶 Activity Tracker
-![Activity 1](Images/activity1.jpg)
 
-![Activity 2](Images/activity2.jpg)
+<img src="Images/activity1.jpg" width="300">
+
+<img src="Images/activity2.jpg" width="300">
 
 ## 🤖 AI Fitness Buddy Chatbot
-![Chatbot](Images/chatbot.jpg)
+
+<img src="Images/chatbot.jpg" width="300">
 
 ## 💧 Water Intake Tracker
-![Water Intake](Images/water.jpg)
+
+<img src="Images/water.jpg" width="300">
 
 ## ⚖️ BMI Calculator
-![BMI Calculator](Images/bmi.jpg)
+
+<img src="Images/bmi.jpg" width="300">
 
 ## 🛌 Sleep Tracker
-![Sleep Tracker](Images/sleeptracker.jpg)
+
+<img src="Images/sleeptracker.jpg" width="300">
 
 ## 🥗 Diet Plan
-![Diet Plan](Images/dietplan.png)
+
+<img src="Images/dietplan.png" width="300">
 
 ## 🧘 Meditation Timer
-![Meditation](Images/meditation.jpg)
+
+<img src="Images/meditation.jpg" width="300">
 
 ## 👤 User Profile
-![Profile](Images/profile.jpg)
+
+<img src="Images/profile.jpg" width="300">
 
 ## ⚙️ Settings
-![Settings](Images/setting.png)
 
+<img src="Images/setting.png" width="300">
 # 🔮 Future Enhancements
 
 - Google Fit Integration
