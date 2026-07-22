@@ -263,7 +263,7 @@ The reset feature is useful when users want to start tracking from the beginning
 ## 🎥 Project Demonstration
 
 
-[▶️ Watch Project Demo](Video/demo.mp4)
+[▶️ Watch Project Demo](video/demo.mp4)
 
 ---
 
