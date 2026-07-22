@@ -201,48 +201,81 @@ The reset feature is useful when users want to start tracking from the beginning
 
 # 📸 Application Screenshots
 
-### Login Screen
+## 🔐 Login Screen
 
-(Add Screenshot)
-
-### Dashboard
-
-(Add Screenshot)
-
-### Activity Tracker
-
-(Add Screenshot)
-
-### Water Intake
-
-(Add Screenshot)
-
-### BMI Calculator
-
-(Add Screenshot)
-
-### Sleep Tracker
-
-(Add Screenshot)
-
-### AI Fitness Chatbot
-
-(Add Screenshot)
-
-### Diet Plan
-
-(Add Screenshot)
-
-### Meditation Timer
-
-(Add Screenshot)
-
-### User Profile
-
-(Add Screenshot)
+![Login Screen](images/login.jpg)
 
 ---
 
+## 🏠 Dashboard
+
+### Dashboard - Home
+
+![Dashboard 1](images/dashboard1.jpg)
+
+### Dashboard - Additional Features
+
+![Dashboard 2](images/dashboard2.jpg)
+
+---
+
+## 🚶 Activity Tracker
+
+### Step Counter
+
+![Activity 1](images/activity1.jpg)
+
+### Calories & Distance
+
+![Activity 2](images/activity2.jpg)
+
+---
+
+## 🤖 AI Fitness Buddy Chatbot
+
+![AI Chatbot](images/chatbot.jpg)
+
+---
+
+## 💧 Water Intake Tracker
+
+![Water Intake](images/water.jpg)
+
+---
+
+## ⚖️ BMI Calculator
+
+![BMI Calculator](images/bmi.jpg)
+
+---
+
+## 🛌 Sleep Tracker
+
+![Sleep Tracker](images/sleeptracker.jpg)
+
+---
+
+## 🥗 Diet Plan
+
+![Diet Plan](images/dietplan.png)
+
+---
+
+## 🧘 Meditation Timer
+
+![Meditation](images/meditation.jpg)
+
+---
+
+## 👤 User Profile
+
+![User Profile](images/profile.jpg)
+
+---
+
+## ⚙️ Settings
+
+![Settings](images/setting.png)
 # 🔮 Future Enhancements
 
 - Google Fit Integration
