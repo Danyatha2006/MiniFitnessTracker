@@ -262,10 +262,9 @@ The reset feature is useful when users want to start tracking from the beginning
 
 ## 🎥 Project Demonstration
 
-<video width="700" controls>
-  <source src="Videos/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+[▶️ Watch Project Demo](Video/demo.mp4)
+
 ---
 
 ## Report
