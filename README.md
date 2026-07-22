@@ -260,6 +260,15 @@ The reset feature is useful when users want to start tracking from the beginning
 
 ---
 
+## 🎥 Project Demonstration
+
+[📹 Download and Watch Demo](demo.mp4)
+
+---
+
+## Report
+
+
 # 👨‍💻 Developed By
 
 **Danyatha Y K**
