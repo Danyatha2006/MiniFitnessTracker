@@ -2,78 +2,104 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F0F1A">
+    android:background="#05070A"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp"
-        android:paddingTop="100dp">
+        android:paddingTop="70dp">
 
+        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit Profile ✏️"
             android:textColor="#FFFFFF"
-            android:textSize="28sp"
+            android:textSize="30sp"
             android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
             android:layout_marginBottom="6dp" />
 
+        <!-- Subtitle -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update your details"
-            android:textColor="#9A9AB8"
+            android:text="Update your personal details"
+            android:textColor="#7D8590"
             android:textSize="14sp"
             android:layout_marginBottom="28dp" />
 
+        <!-- Glass Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#1A1A2E"
-            android:padding="20dp">
+            android:background="@drawable/glass_card_green"
+            android:padding="22dp"
+            android:elevation="8dp">
 
+            <!-- Section Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile Details"
+                android:textColor="#39FF14"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="18dp" />
+
+            <!-- Username Input -->
             <EditText
                 android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="56dp"
                 android:hint="Enter Username"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#9A9AB8"
-                android:background="#1E1E28"
-                android:padding="14dp"
+                android:textColorHint="#7D8590"
+                android:background="@drawable/input_field"
+                android:padding="16dp"
                 android:layout_marginBottom="14dp" />
 
+            <!-- Bio Input -->
             <EditText
                 android:id="@+id/bioInput"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="110dp"
                 android:hint="Enter Bio"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#9A9AB8"
-                android:background="#1E1E28"
-                android:padding="14dp"
+                android:textColorHint="#7D8590"
+                android:background="@drawable/input_field"
+                android:padding="16dp"
                 android:gravity="top"
                 android:layout_marginBottom="20dp" />
 
+            <!-- Save Button -->
             <Button
                 android:id="@+id/saveBtn"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="56dp"
                 android:text="Save Changes 💾"
-                android:textColor="#FFFFFF"
-                android:background="#6A5AE0"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:background="@drawable/green_button"
                 android:layout_marginBottom="14dp" />
 
+            <!-- Back Button -->
             <Button
                 android:id="@+id/backBtn"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="56dp"
                 android:text="← Back"
                 android:textColor="#FFFFFF"
-                android:background="#2A2A3D" />
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                android:background="@drawable/btn_primary" />
 
         </LinearLayout>
 

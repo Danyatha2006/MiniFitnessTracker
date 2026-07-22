@@ -2,72 +2,87 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F0F1A">
+    android:background="#05070A"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp"
-        android:paddingTop="110dp"
+        android:paddingTop="80dp"
         android:paddingBottom="30dp">
 
+        <!-- Title -->
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Settings ⚙️"
             android:textColor="#FFFFFF"
-            android:textSize="28sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginBottom="6dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="6dp" />
 
+        <!-- Subtitle -->
         <TextView
-            android:text="Manage your app preferences"
-            android:textColor="#9A9AB8"
-            android:textSize="14sp"
-            android:layout_marginBottom="28dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Manage your app preferences"
+            android:textColor="#7D8590"
+            android:textSize="14sp"
+            android:layout_marginBottom="28dp" />
 
+        <!-- Settings Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#1A1A2E"
-            android:padding="22dp">
+            android:background="@drawable/glass_card_green"
+            android:padding="22dp"
+            android:elevation="8dp">
 
+            <!-- Section -->
             <TextView
-                android:text="Data Controls"
-                android:textColor="#B0B0D0"
-                android:textSize="13sp"
-                android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="Data Controls"
+                android:textColor="#39FF14"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="18dp" />
 
+            <!-- Reset Button -->
             <Button
                 android:id="@+id/resetBtn"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="56dp"
                 android:text="Reset All Data ♻️"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textStyle="bold"
-                android:background="#6A5AE0"
-                android:layout_marginBottom="16dp"/>
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:background="@drawable/green_button"
+                android:layout_marginBottom="18dp" />
 
+            <!-- Divider -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#2A2A3D"
-                android:layout_marginBottom="16dp"/>
+                android:background="#1E2A33"
+                android:layout_marginBottom="18dp"/>
 
+            <!-- Back Button -->
             <Button
                 android:id="@+id/backBtn"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="56dp"
                 android:text="← Back to Dashboard"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:background="#2A2A3D"/>
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                android:background="@drawable/btn_primary" />
 
         </LinearLayout>
 

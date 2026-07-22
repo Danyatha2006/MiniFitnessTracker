@@ -2,51 +2,62 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fitnesstracker">
 
-    <!-- Internet (optional) -->
+    <!-- Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- ✅ REQUIRED for step counter (Android 10+) -->
+    <!-- Step Counter Permission -->
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <!-- Gallery/Profile Image Permissions -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- For Older Android Devices -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="FitnessTracker"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <!-- 🔐 LOGIN (Launcher Activity) -->
+        <!-- Login Activity -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-        <!-- 📝 SIGNUP -->
-        <activity android:name=".SignupActivity" />
+        <!-- Other Activities -->
+        <activity android:name=".SignupActivity" android:exported="false" />
+        <activity android:name=".DashboardActivity" android:exported="false" />
+        <activity android:name=".ProfileActivity" android:exported="false" />
+        <activity android:name=".EditProfileActivity" android:exported="false" />
+        <activity android:name=".TrackerActivity" android:exported="false" />
+        <activity android:name=".CaloriesActivity" android:exported="false" />
+        <activity android:name=".HistoryActivity" android:exported="false" />
+        <activity android:name=".SettingsActivity" android:exported="false" />
 
-        <!-- 🏠 DASHBOARD -->
-        <activity android:name=".DashboardActivity" />
+        <!-- Fitness Features -->
+        <activity android:name=".WaterIntakeActivity" android:exported="false" />
+        <activity android:name=".BMICalculatorActivity" android:exported="false" />
+        <activity android:name=".SleepCalculatorActivity" android:exported="false" />
+        <activity android:name=".DietPlanActivity" android:exported="false" />
+        <activity android:name=".MeditationTimerActivity" android:exported="false" />
+        <activity android:name=".SleepTrackerActivity" android:exported="false" />
 
-        <!-- 👤 PROFILE -->
-        <activity android:name=".ProfileActivity" />
-
-        <!-- ✏️ EDIT PROFILE (NEW) -->
-        <activity android:name=".EditProfileActivity" />
-
-        <!-- 🏃 TRACKER -->
-        <activity android:name=".TrackerActivity" />
-
-        <!-- 🔥 CALORIES -->
-        <activity android:name=".CaloriesActivity" />
-
-        <!-- 📊 HISTORY -->
-        <activity android:name=".HistoryActivity" />
-
-        <!-- ⚙️ SETTINGS -->
-        <activity android:name=".SettingsActivity" />
+        <!-- AI Chatbot -->
+        <activity android:name=".ChatbotActivity" android:exported="false" />
 
     </application>
 

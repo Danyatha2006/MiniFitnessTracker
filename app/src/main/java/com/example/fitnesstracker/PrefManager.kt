@@ -1,64 +1,86 @@
 package com.example.fitnesstracker
 
 import android.content.Context
+import android.content.SharedPreferences
+import java.text.SimpleDateFormat
+import java.util.*
+
+data class WorkoutHistory(
+    val date: String,
+    val steps: Int,
+    val calories: Int
+)
 
 class PrefManager(context: Context) {
 
-    private val pref = context.getSharedPreferences("FitTrack", Context.MODE_PRIVATE)
+    private val PREF_NAME = "fitness_prefs"
+    private val sharedPref: SharedPreferences =
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
-    // Save User
-    fun saveUser(name: String, email: String) {
-        pref.edit()
-            .putString("name", name)
-            .putString("email", email)
-            .apply()
-    }
-
-    fun getName(): String {
-        return pref.getString("name", "User") ?: "User"
-    }
-
-    // Save Steps
-    fun saveSteps(steps: Int) {
-        pref.edit()
-            .putInt("steps", steps)
-            .apply()
-    }
-
-    fun getSteps(): Int {
-        return pref.getInt("steps", 0)
-    }
-
-    // FIXED Calories (Int only)
-    fun saveCalories(cal: Int) {
-        pref.edit()
-            .putInt("calories", cal)
-            .apply()
-    }
-
-    fun getCalories(): Int {
-        return pref.getInt("calories", 0)
-    }
-
-    // Clear all data
-    fun clear() {
-        pref.edit()
-            .clear()
-            .apply()
-    }
-    // Profile Data
-    fun saveProfile(username: String, bio: String) {
-        pref.edit()
-            .putString("username", username)
-            .putString("bio", bio)
-            .apply()
+    // Profile Management
+    fun setUsername(name: String) {
+        sharedPref.edit().putString("username", name).apply()
     }
 
     fun getUsername(): String {
-        return pref.getString("username", "") ?: ""
+        return sharedPref.getString("username", "User") ?: "User"
+    }
+
+    fun setBio(bio: String) {
+        sharedPref.edit().putString("bio", bio).apply()
     }
 
     fun getBio(): String {
-        return pref.getString("bio", "") ?: ""
+        return sharedPref.getString("bio", "") ?: ""
+    }
+
+    // Daily Stats Management
+    fun saveSteps(steps: Int) {
+        sharedPref.edit().putInt("today_steps", steps).apply()
+    }
+
+    fun getTodaySteps(): Int {
+        return sharedPref.getInt("today_steps", 0)
+    }
+
+    fun saveCalories(calories: Int) {
+        sharedPref.edit().putInt("today_calories", calories).apply()
+    }
+
+    fun getTodayCalories(): Int {
+        return sharedPref.getInt("today_calories", 0)
+    }
+
+    fun resetTodayWorkout() {
+        sharedPref.edit()
+            .putInt("today_steps", 0)
+            .putInt("today_calories", 0)
+            .apply()
+    }
+
+    // Save end-of-day workout to history
+    fun saveEndOfDayWorkout(steps: Int, calories: Int) {
+        val today = getTodayDate()
+        val value = "$steps|$calories"
+        sharedPref.edit().putString("history_$today", value).apply()
+    }
+
+    // Get previous day's workout from history
+    fun getPreviousDayWorkout(): WorkoutHistory? {
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DATE, -1)
+        val yesterday = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(calendar.time)
+
+        val value = sharedPref.getString("history_$yesterday", null) ?: return null
+        val parts = value.split("|")
+        val steps = parts.getOrNull(0)?.toIntOrNull() ?: 0
+        val calories = parts.getOrNull(1)?.toIntOrNull() ?: 0
+
+        return if (steps == 0 && calories == 0) null
+        else WorkoutHistory(yesterday, steps, calories)
+    }
+
+    private fun getTodayDate(): String {
+        return SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
     }
 }

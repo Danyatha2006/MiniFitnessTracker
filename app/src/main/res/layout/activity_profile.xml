@@ -2,92 +2,162 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F0F1A">
+    android:background="#05070A"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:paddingTop="120dp">
+        android:padding="24dp">
 
+        <!-- Heading -->
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Profile 👤"
             android:textColor="#FFFFFF"
-            android:textSize="26sp"
+            android:textSize="34sp"
             android:textStyle="bold"
-            android:layout_marginBottom="6dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="40dp" />
 
         <TextView
-            android:text="Your account details"
-            android:textColor="#9A9AB8"
-            android:textSize="14sp"
-            android:layout_marginBottom="25dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Manage your account details"
+            android:textColor="#7D8590"
+            android:textSize="15sp"
+            android:layout_marginBottom="30dp" />
 
+        <!-- Main Card -->
         <LinearLayout
-            android:background="#1A1A2E"
-            android:padding="20dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/glass_card_green">
 
-            <TextView
-                android:id="@+id/name"
-                android:text="User Name"
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher_round"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"
+                android:background="@drawable/profile_circle_bg"
+                android:padding="2dp" />
+
+            <!-- Upload Button -->
+            <Button
+                android:id="@+id/btnUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Photo"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:textColor="#000000"
+                android:backgroundTint="#39FF14" />
+
+            <!-- Username -->
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Username"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textColorHint="#7D8590"
+                android:backgroundTint="#39FF14"
+                android:layout_marginTop="28dp" />
+
+            <!-- Bio -->
+            <EditText
+                android:id="@+id/etBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                android:hint="Bio"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#7D8590"
+                android:backgroundTint="#39FF14"
+                android:layout_marginTop="18dp" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#7D8590"
+                android:backgroundTint="#39FF14"
+                android:layout_marginTop="18dp" />
+
+            <!-- Weight -->
+            <EditText
+                android:id="@+id/etWeight"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Weight (kg)"
+                android:inputType="numberDecimal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#7D8590"
+                android:backgroundTint="#39FF14"
+                android:layout_marginTop="18dp" />
+
+            <!-- Height -->
+            <EditText
+                android:id="@+id/etHeight"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Height (cm)"
+                android:inputType="numberDecimal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#7D8590"
+                android:backgroundTint="#39FF14"
+                android:layout_marginTop="18dp" />
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="Save Profile 💾"
+                android:textAllCaps="false"
                 android:textStyle="bold"
-                android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/username"
-                android:text="username"
-                android:textColor="#B0B0D0"
                 android:textSize="16sp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1A1F2B"
+                android:layout_marginTop="30dp" />
 
-            <TextView
-                android:id="@+id/bio"
-                android:text="Your bio"
-                android:textColor="#9A9AB8"
-                android:textSize="14sp"
-                android:layout_marginBottom="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+            <!-- Edit Button -->
             <Button
-                android:id="@+id/editBtn"
+                android:id="@+id/btnEdit"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
                 android:text="Edit Profile ✏️"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:textColor="#FFFFFF"
-                android:background="#6A5AE0"
-                android:layout_marginBottom="12dp"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"/>
+                android:backgroundTint="#1A1F2B"
+                android:layout_marginTop="16dp" />
 
+            <!-- Back Button -->
             <Button
-                android:id="@+id/logout"
-                android:text="Logout 🚪"
-                android:textColor="#FFFFFF"
-                android:background="#6A5AE0"
-                android:layout_marginBottom="12dp"
+                android:id="@+id/btnBack"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"/>
-
-            <Button
-                android:id="@+id/backBtn"
-                android:text="← Back to Dashboard"
+                android:layout_height="58dp"
+                android:text="Back ⬅️"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:textColor="#FFFFFF"
-                android:background="#2A2A3D"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:backgroundTint="#1A1F2B"
+                android:layout_marginTop="16dp" />
 
         </LinearLayout>
 

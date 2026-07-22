@@ -2,7 +2,8 @@ package com.example.fitnesstracker
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.*
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class DashboardActivity : AppCompatActivity() {
@@ -13,63 +14,34 @@ class DashboardActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_dashboard)
 
-        // ✅ Safe PrefManager usage
+        // Views
         val welcomeText = findViewById<TextView>(R.id.welcome)
-
-        try {
-            val pref = PrefManager(this)
-            val name = pref.getName()
-
-            welcomeText.text = if (!name.isNullOrEmpty()) {
-                "Welcome $name 👋"
-            } else {
-                "Welcome 👋"
-            }
-
-        } catch (e: Exception) {
-            welcomeText.text = "Welcome 👋"
-        }
-
-        // ✅ Safe button bindings
+        val chatbot = findViewById<Button>(R.id.btnChatbot)
         val tracker = findViewById<Button>(R.id.btnTracker)
+        val water = findViewById<Button>(R.id.btnWater)
+        val bmi = findViewById<Button>(R.id.btnBMI)
+        val sleepCalc = findViewById<Button>(R.id.btnSleepCalc)
+        val diet = findViewById<Button>(R.id.btnDiet)
+        val meditation = findViewById<Button>(R.id.btnMeditation)
+        val sleepTracker = findViewById<Button>(R.id.btnSleepTracker)
         val profile = findViewById<Button>(R.id.btnProfile)
         val history = findViewById<Button>(R.id.btnHistory)
         val settings = findViewById<Button>(R.id.btnSettings)
 
-        // ✅ Tracker Navigation
-        tracker?.setOnClickListener {
-            try {
-                startActivity(Intent(this, TrackerActivity::class.java))
-            } catch (e: Exception) {
-                Toast.makeText(this, "Tracker not available", Toast.LENGTH_SHORT).show()
-            }
-        }
+        // Welcome text
+        welcomeText.text = "Welcome 👋"
 
-        // ✅ Profile Navigation
-        profile?.setOnClickListener {
-            try {
-                startActivity(Intent(this, ProfileActivity::class.java))
-            } catch (e: Exception) {
-                Toast.makeText(this, "Profile not available", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        // ✅ History Navigation
-        history?.setOnClickListener {
-            try {
-                startActivity(Intent(this, HistoryActivity::class.java))
-            } catch (e: Exception) {
-                Toast.makeText(this, "History not available", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        // ✅ Settings Navigation
-        settings?.setOnClickListener {
-            try {
-                startActivity(Intent(this, SettingsActivity::class.java))
-            } catch (e: Exception) {
-                Toast.makeText(this, "Settings not available", Toast.LENGTH_SHORT).show()
-            }
-        }
+        // Navigation listeners
+        chatbot.setOnClickListener { startActivity(Intent(this, ChatbotActivity::class.java)) }
+        tracker.setOnClickListener { startActivity(Intent(this, TrackerActivity::class.java)) }
+        water.setOnClickListener { startActivity(Intent(this, WaterIntakeActivity::class.java)) }
+        bmi.setOnClickListener { startActivity(Intent(this, BMICalculatorActivity::class.java)) }
+        sleepCalc.setOnClickListener { startActivity(Intent(this, SleepCalculatorActivity::class.java)) }
+        diet.setOnClickListener { startActivity(Intent(this, DietPlanActivity::class.java)) }
+        meditation.setOnClickListener { startActivity(Intent(this, MeditationTimerActivity::class.java)) }
+        sleepTracker.setOnClickListener { startActivity(Intent(this, SleepTrackerActivity::class.java)) }
+        profile.setOnClickListener { startActivity(Intent(this, ProfileActivity::class.java)) }
+        history.setOnClickListener { startActivity(Intent(this, HistoryActivity::class.java)) }
+        settings.setOnClickListener { startActivity(Intent(this, SettingsActivity::class.java)) }
     }
 }

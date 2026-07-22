@@ -3,7 +3,10 @@ package com.example.fitnesstracker
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,12 +19,10 @@ class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        supportActionBar?.hide()
         setContentView(R.layout.activity_signup)
 
-        // 🔥 Hide ActionBar (for your UI design)
-        supportActionBar?.hide()
-
-        // Firebase init
+        // Firebase
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
@@ -33,13 +34,14 @@ class SignupActivity : AppCompatActivity() {
         val signupBtn = findViewById<Button>(R.id.signupBtn)
         val backBtn = findViewById<TextView>(R.id.backBtn)
 
+        // Signup Button
         signupBtn.setOnClickListener {
 
             val nameText = name.text.toString().trim()
             val emailText = email.text.toString().trim()
             val passwordText = password.text.toString().trim()
 
-            // ✅ VALIDATIONS (IMPORTANT)
+            // Validation
             if (nameText.isEmpty()) {
                 name.error = "Enter name"
                 return@setOnClickListener
@@ -57,59 +59,77 @@ class SignupActivity : AppCompatActivity() {
 
             signupBtn.isEnabled = false
 
-            auth.createUserWithEmailAndPassword(emailText, passwordText)
-                .addOnCompleteListener { task ->
+            // Firebase Auth Signup
+            auth.createUserWithEmailAndPassword(
+                emailText,
+                passwordText
+            ).addOnCompleteListener(this) { task ->
 
-                    signupBtn.isEnabled = true
+                signupBtn.isEnabled = true
 
-                    if (task.isSuccessful) {
+                if (task.isSuccessful) {
 
-                        val userId = auth.currentUser?.uid
+                    val userId = auth.currentUser?.uid
 
-                        if (userId == null) {
-                            Toast.makeText(this, "User error", Toast.LENGTH_SHORT).show()
-                            return@addOnCompleteListener
-                        }
+                    if (userId != null) {
 
                         val user = hashMapOf(
                             "name" to nameText,
                             "email" to emailText
                         )
 
+                        // Firestore Save
                         db.collection("users")
                             .document(userId)
                             .set(user)
                             .addOnSuccessListener {
 
-                                Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    this@SignupActivity,
+                                    "Signup Successful ✅",
+                                    Toast.LENGTH_SHORT
+                                ).show()
 
-                                startActivity(Intent(this, LoginActivity::class.java))
+                                // Open Login Page
+                                val intent = Intent(
+                                    this@SignupActivity,
+                                    LoginActivity::class.java
+                                )
+
+                                startActivity(intent)
                                 finish()
                             }
+
                             .addOnFailureListener {
-                                Toast.makeText(this, "Firestore Error", Toast.LENGTH_SHORT).show()
+
+                                Toast.makeText(
+                                    this@SignupActivity,
+                                    "Firestore Error",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
-
-                    } else {
-
-                        // 🔥 BETTER ERROR HANDLING
-                        val message = when {
-                            task.exception?.message?.contains("email address is already in use") == true ->
-                                "Email already exists"
-
-                            task.exception?.message?.contains("badly formatted") == true ->
-                                "Invalid email format"
-
-                            else -> "Signup Failed"
-                        }
-
-                        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
                     }
+
+                } else {
+
+                    Toast.makeText(
+                        this@SignupActivity,
+                        task.exception?.message,
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
+            }
         }
 
+        // Back Button
         backBtn.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+
+            val intent = Intent(
+                this@SignupActivity,
+                LoginActivity::class.java
+            )
+
+            startActivity(intent)
             finish()
         }
     }

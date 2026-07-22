@@ -2,85 +2,82 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F0F1A">
+    android:background="#05070A"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:paddingTop="100dp">
+        android:padding="24dp"
+        android:paddingTop="120dp">
 
+        <!-- Main Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calorie Calculator 🔥"
+            android:text="Calories Report"
             android:textColor="#FFFFFF"
-            android:textSize="26sp"
+            android:textSize="32sp"
             android:textStyle="bold"
-            android:layout_marginBottom="6dp" />
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp" />
 
+        <!-- Subtitle -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Estimate your energy burn"
-            android:textColor="#9A9AB8"
+            android:text="Your daily fitness analysis"
+            android:textColor="#7D8590"
             android:textSize="14sp"
-            android:layout_marginBottom="25dp" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp" />
 
+        <!-- Glass Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/card_bg"
-            android:padding="20dp">
+            android:background="@drawable/glass_card_green"
+            android:padding="24dp"
+            android:elevation="10dp">
 
-            <EditText
-                android:id="@+id/weightInput"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:hint="Weight (kg)"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#6B6B8F"
-                android:background="@drawable/input_field"
-                android:layout_marginBottom="12dp"/>
-
-            <EditText
-                android:id="@+id/activeInput"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:hint="Active Minutes"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#6B6B8F"
-                android:background="@drawable/input_field"
-                android:layout_marginBottom="12dp"/>
-
-            <Button
-                android:id="@+id/calcBtn"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="Calculate 🔥"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/button_selector"
-                android:layout_marginTop="10dp"/>
-
+            <!-- Card Header -->
             <TextView
-                android:id="@+id/result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 kcal"
-                android:textColor="#FF9800"
-                android:textSize="28sp"
-                android:layout_marginTop="20dp"/>
+                android:text="Today's Summary"
+                android:textColor="#39FF14"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="18dp" />
 
+            <!-- Result Text -->
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Waiting for tracker data..."
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="8dp"
+                android:gravity="center"
+                android:layout_marginBottom="28dp" />
+
+            <!-- Back Button -->
             <Button
                 android:id="@+id/backBtn"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Back"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/button_selector"
-                android:layout_marginTop="15dp"/>
+                android:layout_height="56dp"
+                android:text="Back To Tracker"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:background="@drawable/green_button"
+                android:elevation="6dp" />
 
         </LinearLayout>
 
