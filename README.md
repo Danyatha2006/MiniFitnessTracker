@@ -269,7 +269,7 @@ The reset feature is useful when users want to start tracking from the beginning
 
 ## 📄 Project Report
 
-[📥 View Project Report](Report/FitnessTracker_Project_Report.pdf)
+[📥 View Project Report](Report/fitnesstracker_Project_Report.pdf)
 
 ---
 
